@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<fieldset> <!-- Za kreiranje na ramka okolu celata web strana -->
+<head>
+<meta charset = "utf-8">
+<title>Dado Tea Lunch Special</title>
+</head>
+
+<body>
+<header>
+<h1>Dado Tea Lunch Special</h1>
+<aside>Monday through Friday</aside>
+<aside>11am - 3pm</aside>
+<aside>$9.95 plus tax</aside>
+<br>
+<aside>Includes sandwich, snack, and drink.</aside>
+</header>
+<br>
+<form method = "post" autocomplete = "on" action = "https://mjcodingjourney.wordpress.com/">
+<fieldset>
+  <legend>Order Information</legend>
+  
+  <p><label><strong>Name<br></strong>
+  <input name = "name" id = "name" type = "text" size = "25" maxlength = "30" required>
+  </label></p>
+  <p><input name = "ordertake" type = "radio" value = "Here" required> Here<br>
+  <input name = "ordertake" type = "radio" value = "To Go" required> To Go
+  </p>
+</fieldset>
+
+<fieldset>
+  <legend>Sandwiches</legend>
+  
+ <p>
+<strong>Monday</strong><br>
+  <input name = "mondaysandwich" type = "radio" value = "Tomato Mozzarella"> Tomato Mozzarella<br>
+  <input name = "mondaysandwich" type = "radio" value = "Chicken Salad"> Chicken Salad
+  </p>
+  
+  <p>
+  <strong>Tuesday</strong><br>
+  <input name = "tuesdaysandwich" type = "radio" value = "Greek Salad Wrap"> Greek Salad Wrap<br>
+  <input name = "tuesdaysandwich" type = "radio" value = "Toto Wrap"> Toto Wrap
+  </p>
+ 
+ <p>
+  <strong>Wednesday</strong><br>
+  <input name = "wednesdaysandwich" type = "radio" value = "Red Pepper Hummus"> Red Pepper Hummus<br>
+  <input name = "wednesdaysandwich" type = "radio" value = "Roasted Turkey"> Roasted Turkey
+  </p>
+  
+   <p>
+  <strong>Thursday</strong><br>
+  <input name = "thursdaysandwich" type = "radio" value = "Carrot-Ginger Hummus Wrap"> Carrot-Ginger Hummus Wrap<br>
+  <input name = "thursdaysandwich" type = "radio" value = "Egg Salad"> Egg Salad
+  </p>
+  
+  <p>
+  <strong>Friday</strong><br>
+  <input name = "fridaysandwich" type = "radio" value = "Dado Wrap"> Dado Wrap<br>
+  <input name = "fridaysandwich" type = "radio" value = "Tuna Salad"> Tuna Salad
+  </p>
+ 
+ <hr>
+ <p>
+ <input name = "glutenfreebread" type = "checkbox" value = "Gluten Free Bread (75&cent extra)">Gluten Free Bread (75&cent extra)</p>
+ 
+</fieldset>
+
+<fieldset>
+  <legend>Snack</legend>
+  <p><strong>Snacks</strong><br>
+  <input name = "snack" type = "radio" value = "Apple"> Apple<br>
+  <input name = "snack" type = "radio" value = "Banana"> Banana<br>
+  <input name = "snack" type = "radio" value = "Potato Chips"> Potato Chips
+  </p>
+  
+</fieldset>
+
+<fieldset>
+  <legend>Drink</legend>
+ <p><strong>Drinks</strong><br>
+ <select name = "drinks">
+ <option selected>Coffee</option>
+ <option selected>Iced Coffee</option>
+ <option selected>Organic Peppermint</option>
+ <option selected>Hot Sencha Green Tea</option>
+ <option selected>Iced Sencha Green Tea</option>
+ <option selected>Hot Keemun Black Tea</option>
+ <option selected>Iced Keemun Black Tea</option>
+ </select> </p>
+ <hr>
+ 
+ <p>
+ <input name = "largedrink" type = "checkbox" value = "Large Drink (75&cent extra)"> Large Drink (75&cent extra)</p>
+</fieldset>
+
+<p>
+<input type = "submit" value = "Place Order">
+</p>
+
+</form>
+</body>
+</fieldset> <!-- Zatvoranje na ramkata okolu celata web strana -->
+</html>
