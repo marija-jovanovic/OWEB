@@ -1,0 +1,25 @@
+    h1 { -webkit-text-stroke: 1.5px olive; text-shadow: 4px 6px 6px rgb(128,128,128, 0.8); color: olive; }
+
+    body { background-color: snow; }
+
+    div { position: relative; text-align: center; }
+    
+    #vtor
+
+	{ color: rgb(0, 0, 0, 0.8); text-align: left; }
+
+    .naslovi { -webkit-text-stroke: 0.5px olive; color: olive; font-weight: bold; }
+    .ramki { border-color: navajowhite; }
+    .boja { color: darkgoldenrod; }
+    .kopcinja {background-color: rgb(255, 225, 172, 0.3); border-color: olive; color: rgb(128, 128, 0); box-shadow: 5px 5px 5px darkgrey; font-weight: bold; font-family: serif; border-radius: 5px; }
+    .tekst { color: rgb(255, 225, 172, 0.3) }
+    .kopcinja:hover{ background-color: navajowhite; }
+
+    img {
+    margin: 70px;
+    transition: transform 2s;
+    }
+
+    img:hover{
+    transform: scale(1.5);
+    }

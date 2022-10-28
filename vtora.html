@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<fieldset class = "ramki"> <!-- Za kreiranje na ramka okolu celata web strana -->
+<head>
+<meta charset = "utf-8">
+<title>Dado Tea Lunch Special</title>
+<link rel = "stylesheet" type = "text/css" href = "vtora_domasna.css">
+</head>
+
+<body>
+<header>
+<img src = "dado.png" alt = "Logo">
+<div>
+<h1>Dado Tea Lunch Special</h1>
+<aside class = "boja">Monday through Friday</aside>
+<aside class = "boja">11am - 3pm</aside>
+<aside class = "boja">$9.95 plus tax</aside>
+<br>
+<aside class = "boja">Includes sandwich, snack, and drink.</aside>
+</div>
+</header>
+<br>
+<form method = "post" autocomplete = "on" action = "https://mjcodingjourney.wordpress.com/">
+<fieldset class = "ramki">
+ <legend class = "naslovi">Order Information</legend>
+  
+  <p class = "boja"><label><strong>Name<br></strong>
+  <input name = "name" id = "name" type = "text" size = "25" maxlength = "30" class = "kopcinja" required>
+  </label></p>
+  <div id = "vtor">
+  <p><input name = "ordertake" type = "radio" value = "Here" required> Here<br>
+  <input name = "ordertake" type = "radio" value = "To Go" required> To Go
+  </p></div>
+</fieldset>
+
+<fieldset class = "ramki">
+  <legend class = "naslovi">Sandwiches</legend>
+  
+ <p>
+<strong class = "boja">Monday</strong><br>
+<div id = "vtor">
+  <input name = "sandwich" type = "radio" value = "Tomato Mozzarella"> Tomato Mozzarella<br>
+  <input name = "sandwich" type = "radio" value = "Chicken Salad"> Chicken Salad </div>
+  </p>
+  
+  <p>
+  <strong class = "boja">Tuesday</strong><br>
+  <div id = "vtor">
+  <input name = "sandwich" type = "radio" value = "Greek Salad Wrap"> Greek Salad Wrap<br>
+  <input name = "sandwich" type = "radio" value = "Toto Wrap"> Toto Wrap </div>
+  </p>
+ 
+ <p>
+  <strong class = "boja">Wednesday</strong><br>
+  <div id = "vtor">
+  <input name = "sandwich" type = "radio" value = "Red Pepper Hummus"> Red Pepper Hummus<br>
+  <input name = "sandwich" type = "radio" value = "Roasted Turkey"> Roasted Turkey </div>
+  </p>
+  
+   <p>
+  <strong class = "boja">Thursday</strong><br>
+  <div id = "vtor">
+  <input name = "sandwich" type = "radio" value = "Carrot-Ginger Hummus Wrap"> Carrot-Ginger Hummus Wrap<br>
+  <input name = "sandwich" type = "radio" value = "Egg Salad"> Egg Salad </div>
+  </p>
+  
+  <p>
+  <strong class = "boja">Friday</strong><br>
+  <div id = "vtor">
+  <input name = "sandwich" type = "radio" value = "Dado Wrap"> Dado Wrap<br>
+  <input name = "sandwich" type = "radio" value = "Tuna Salad"> Tuna Salad </div>
+  </p>
+ 
+ <hr class = "boja">
+ <p>
+ <div id = "vtor">
+ <input name = "glutenfreebread" type = "checkbox" value = "Gluten Free Bread (75&cent extra)">Gluten Free Bread (75&cent extra)</div></p>
+ 
+</fieldset>
+
+<fieldset class = "ramki">
+  <legend class = "naslovi">Snack</legend>
+  <p><strong class = "boja">Snacks</strong><br>
+  <div id = "vtor">
+  <input name = "snack" type = "radio" value = "Apple"> Apple<br>
+  <input name = "snack" type = "radio" value = "Banana"> Banana<br>
+  <input name = "snack" type = "radio" value = "Potato Chips"> Potato Chips
+  </div>
+  </p>
+  
+</fieldset>
+<fieldset class = "ramki">
+  <legend class = "naslovi">Drink</legend>
+ <p><strong class = "boja">Drinks</strong><br>
+ <select name = "drinks" class = "kopcinja">
+ <option selected>Coffee</option>
+ <option selected>Iced Coffee</option>
+ <option selected>Organic Peppermint</option>
+ <option selected>Hot Sencha Green Tea</option>
+ <option selected>Iced Sencha Green Tea</option>
+ <option selected>Hot Keemun Black Tea</option>
+ <option selected>Iced Keemun Black Tea</option>
+ <option selected>None</option>
+ </select> </p>
+ <hr class = "boja">
+ 
+ <p>
+ <div id = "vtor">
+ <input name = "largedrink" type = "checkbox" value = "Large Drink (75&cent extra)"> Large Drink (75&cent extra) </div> 
+ </p>
+</fieldset>
+
+<div>
+<p>
+<input type = "submit" value = "Place Order" class = "kopcinja">
+</p> 
+</div>
+
+</form>
+</body>
+</fieldset> <!-- Zatvoranje na ramkata okolu celata web strana -->
+</html>
+
+
+
+
+
+
+
+
+
+
