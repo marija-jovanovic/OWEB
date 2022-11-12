@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Racing game</title>
+ <meta charset="UTF-8">
+<style type = "text/css">
+table { width: 10 em}
+td { text-align: center}
+</style>
+<script type = "text/javascript">
+
+var zelka=1; //nova pozicija na zelkata
+var zajak=1; //nova pozicija na zajakot
+var timer; //za regulacija na setInterval
+var zelkat=1; //prethodna pozicija na zelka
+var zajakt=1; //prethodna pozicija na zajak
+var flag = 0; //za regulacija na kraj na igrata
+
+function pomestiZajak() //funkcija koja ke ja setira novata pozicija na zajakot
+{
+var i = Math.floor(Math.random() * 10);
+
+if ((i >= 1) && (i <= 2)){
+   zajak = zajak + 0;
+}
+if ((i >= 3) && (i <= 4)){
+zajak = zajak + 9;      
+}
+if (i == 5){              
+zajak = zajak - 12;    
+}
+if ((i >= 6) && (i <= 8)){
+zajak = zajak + 1;      
+}
+if ((i >= 9) && (i <= 10)){
+zajak = zajak - 2;      
+}
+if (zajak < 1){            
+zajak = 1;            
+}
+}
+
+
+function pomestiZelka(){ //funkcija koja ke ja setira novata pozicija na zelkata
+var j = Math.floor( Math.random() * 10);
+
+if ((j >= 1) && (j <= 5)){
+   zelka = zelka + 3;      
+}
+if ((j >= 6) && (j <= 7)){
+zelka = zelka - 6;  
+}
+if ((j >= 8) && (j <= 10)){
+zelka = zelka + 1;    
+}
+if (zelka < 1){      
+zelka = 1;            
+}
+}
+
+
+function init(){ //funkcija koja samo ednas ke se povika pri load na web stranata
+document.writeln("<table border = \"1\" style = \"width: 100%\">"); //kreira tabela
+    document.writeln("<tbody><tr style = \"height: 100px\">"); //ja definira redicata
+    for (var i = 0;i < 70; i++)
+   document.write("<td id =" + (i+1) + "></td>"); //kreira 70 kelii i setira id za sekoja kelija so vrednost od 1 do 70 soodvetno
+
+    document.writeln("</tr></tbody></table>"); //kraj na definiranje na tabelata
+    var kelija = document.getElementById("1"); //zemi ja kelijata so id 1 odnosno prvata kelija
+    kelija.innerHTML = "T H"; //smeni ja nejzinata sodrzina taka sto i zajakot i zelkata ke bidat postaveni na istata kelija
+    
+    // T = zelka
+    // H = zajak
+    
+
+    let btn = document.createElement("button"); //kreira kopce
+    btn.innerHTML = "Zapocni trka!"; //setira negova vrednost
+    btn.onclick = updateTime; //pri click na kopceto pocni da ja izvrsuvas updateTime funkcijata
+    document.body.appendChild(btn); //dodadi go kopceto vo html dokumentot soodvetno
+
+}
+
+function zavrsiTrka() //funkcija koja se povikuva samo koga e kraj na trkata
+
+{
+clearInterval(timer); //sopri go intervalot na povtoruvanje na updateTime funkcijata
+if (zelka == 70)
+        window.alert("Zelkata pobedi!");
+        if(zajak == 70)
+        window.alert("Zajakot pobedi!");
+}
+
+
+function updateTime(){ //funkcija koja poveke pati ke se izvrsuva i ke ja simulira trkata i dvizenjata
+
+
+pomestiZelka(); //setiraj ja novata pozicija na zelkata
+pomestiZajak(); //setiraj ja novata pozicija na zajakot
+
+if(flag == 0){ //ako ne e kraj na trkata
+
+if(zelka != zelkat){ //ako novata pozicija na zelkata ne e ista so prethodnata pozicija na zelkata
+var kelija = document.getElementById(zelkat); //zemi ja kelijata kade prethodno bila zelkata
+if(kelija.textContent == "T"){ //ako samo zelkata bila vo kelijata
+kelija.innerHTML = ""; // izvadi ja zelkata od taa kelija i napravi ja kelijata da e prazna
+}
+
+else{ //ako i zelkata i zajakot bile zaedno vo kelijata
+kelija.innerHTML = "H"; //napravi samo da ostane zajakot vo kelijata
+}
+
+if(zelka >= 70){ //ako novata pozicija na zelkata e >= 70
+zelka = 70; //setiraj ja novata pozicija da e 70
+var cell = document.getElementById(zelka);//zemi ja 70-tata kelija
+cell.innerHTML += "T"; //i stavi ja zelkata vo kelijata
+zavrsiTrka(); //zavrsi trka
+flag = 1; //setiraj flag na 1
+}
+
+else{ //ako novata pozicija na zelkata e < 70
+var cell = document.getElementById(zelka); //zemi ja kelijata na novata pozicija
+cell.innerHTML += "T"; //stavi ja zelkata tamu
+}
+
+} //za if-ot so zelka != zelkat
+
+if(zelka == zajakt) //ako zelkata dojde na ista pozicija so zajakot (zemame deka zajakot se uste ne dosol na red da ja promeni svojata pozicija)
+window.alert("OUCH!");
+
+} //za if-ot so flag
+
+
+if(flag == 0){ //ako trkata se uste ne e zavrsena
+if(zajak != zajakt){ //ako novata pozicija na zajakot ne e ednakva so prethodnata negova pozicija
+var kelija = document.getElementById(zajakt); //zemi ja kelijata kade prethodno bil zajakot
+if(kelija.textContent == "H"){ //ako samo zajakot bil vo kelijata
+kelija.innerHTML = ""; //izvadi go zajakot od kelijata i napravi ja da bide prazna
+}
+
+else{ //ako i zelkata i zajakot bile zaedno vo kelijata
+kelija.innerHTML = "T"; //napravi da da ostane samo zelkata
+}
+
+if(zajak >= 70){ //ako novata pozicija na zajakot e >= 70
+zajak = 70; //setiraj ja novata pozicija na 70
+var cell = document.getElementById(zajak); //zemi ja 70-tata kelija
+cell.innerHTML += "H"; //dodadi go zajakot vo kelijata
+zavrsiTrka(); //zavrsi ja trkata
+flag = 1; //setiraj go flag na 1
+}
+
+else{ //ako novata pozicija na zajakot e < 70
+var cell = document.getElementById(zajak); //zemi ja kelijata kade treba da se postavi zajakot
+cell.innerHTML += "H"; //dodadi go zajakot vo kelijata
+}
+
+} //za if-ot so zajak != zajakt
+
+if(zajak == zelka) //ako novata pozicija na zajakot e ista so pozicijata na zelkata
+window.alert("OUCH!");
+
+} //za if-ot so flag == 0
+
+zelkat = zelka; //prethodna pozicija na zelkata = tekovna pozicija na zelkata
+zajakt = zajak; //prethodna pozicija na zajak = tekovna pozicija na zajak
+timer = setInterval(updateTime, 3000); //povtoruvaj ja funkcijata na sekoi 3 sekundi
+}
+
+window.addEventListener("load", init, false);
+
+</script>
+</head>
+<body>
+</body>
+</html>
