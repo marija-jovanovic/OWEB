@@ -18,7 +18,7 @@ var flag = 0; //za regulacija na kraj na igrata
 
 function pomestiZajak() //funkcija koja ke ja setira novata pozicija na zajakot
 {
-var i = Math.floor(Math.random() * 10);
+var i = Math.floor( 1 + Math.random() * 10 );
 
 if ((i >= 1) && (i <= 2)){
    zajak = zajak + 0;
@@ -42,7 +42,7 @@ zajak = 1;
 
 
 function pomestiZelka(){ //funkcija koja ke ja setira novata pozicija na zelkata
-var j = Math.floor( Math.random() * 10);
+var j = Math.floor( 1 + Math.random() * 10 );
 
 if ((j >= 1) && (j <= 5)){
    zelka = zelka + 3;      
