@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Galerija</title>
+
+<link rel = "stylesheet" type = "text/css" href = "proektna.css">
+<style>
+
+body {
+font-family: helvetica, serif;
+background-image: linear-gradient(to right, purple , rgb(65,105,225));
+
+}
+
+.tekst {
+font-family: helvetica, serif;
+}
+
+.centre{
+text-align: center;
+}
+
+.box {
+width: max-content;
+position: relative;
+left: 780px;
+background-color: white;
+border-radius: 5px;
+box-shadow: 5px 5px 5px black;
+border-color: black;
+border-style: solid;
+}
+
+.ramka {
+border: 5px solid black;
+margin: 5px;
+}
+
+div.naslovi {text-align: center; color: purple; background-image: linear-gradient(to right, purple , rgb(65,105,225)); color: purple;
+-webkit-text-stroke: 2px rgb(65,105,225); font-size: 150%;}
+
+.emoji {
+  font-family: Segoe UI Emoji, Segoe UI Symbol, Quivira, Symbola;
+  
+}
+
+img{
+width: 500px;
+height: 500px;
+}
+
+.bounce2 {
+opacity: 1;
+transition: opacity 2s;
+
+}
+
+
+.hideme {
+opacity:0;
+}
+
+.sodrzina:hover{ background-color: lightpink; }
+
+.sodrzina {
+border-radius: 5px;
+box-shadow: 5px 5px 5px black;
+border-color: black;
+border-style: solid;
+}
+
+.submit {
+border-radius: 5px;
+border-color: black;
+border-width: 2px;
+border-style: solid;
+font-weight: bold;
+font-size: medium;
+background-color: white;
+font-family: helvetica, serif;
+}
+
+.submit:hover{ background-color: lightpink; }
+
+</style>
+
+
+</head>
+
+<body>
+<div class="header-image">
+<div class="header-text">
+<h1>Marija Jovanović's Webpage</h1>
+</div>
+<div class = "header-line">
+<nav>Menu
+<ul>
+<li><a class = "boja" href = "proektna.html">Home</a></li>
+<li><a class = "boja" href = "omileni_nesta.html">Favourite Things</a></li>
+<li><a class = "boja" href = "galerija.html">Gallery</a></li>
+<li><a class = "boja" href = "blog_writing.html">Blog</a></li>
+<li><a class = "boja" href = "anketa.html">Survey</a></li>
+<li><a class = "boja" href = "kontakt.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</div>
+
+<div class = "naslovi">
+<h1>Gallery</h1>
+</div>
+
+<div class = "centre"><img id = "x" src = "majorka.jpg" class = "ramka"></div>
+<div class = "centre">
+
+<button onclick = "addPhoto()" class = "submit">Add new photo</button>
+<br><br>
+<label><strong>Add a comment: </strong></label>
+
+<textarea id="comment" rows="1" cols="100" class = "sodrzina"></textarea>
+<button onclick = "addComment()" class = "submit">Submit comment</button>
+<br><br>
+<button onclick = "updatePicture()" class = "submit">Next</button>
+<button onclick = "updatePrevious()" class = "submit">Previous</button>
+
+<br>
+<br>
+<button id = "likes" onclick = "updateLikes()" class = "submit">Like</button>
+<br>
+<div class = "bounce2" id = "brisi">
+<span class=emoji>&#x1F44D;</span>
+</div>
+
+
+<button id = "num_likes" class = "submit">0 likes</button>
+<button id = "unlikes" onclick = "updateUnlikes()" class = "submit">Unlike</button>
+<br><br>
+<div id = "komentari">
+</div>
+</div>
+
+<script type = "text/javascript">
+var niza = new Array(4); //tuka ke se cuvaat site sliki
+niza[0] = "majorka.jpg";
+niza[1] = "santorini.jpg";
+niza[2] = "usa.jpg";
+niza[3] = "lefkada.jpg";
+var count = 0;
+
+var i = 0;
+var j = 0;
+
+function addComment(){
+
+var part = document.getElementById("komentari");
+var komentar = document.createElement("p");
+komentar.setAttribute("class", "box");
+part.appendChild(komentar);
+part.children[j].innerHTML = "Comment #" + (j+1) + " " + document.getElementById("comment").value;
+j++;
+};
+
+function updatePrevious(){
+if(i > 0){
+i--;
+document.getElementById("x").src = niza[i];
+}
+
+}
+
+function updatePicture(){
+if(i < (niza.length - 1)){
+i++;
+document.getElementById("x").src = niza[i];
+}
+
+}
+
+var tekst = document.getElementById("brisi").innerHTML;
+
+function updateLikes(){
+count++;
+document.getElementById("brisi").innerHTML = tekst;
+
+document.getElementById("brisi").className = 'bounce2';
+
+document.getElementById("brisi").innerHTML +=  "+" + 1;
+
+setTimeout(function(){
+document.getElementById("brisi").className = 'hideme';
+}, 2000);
+
+
+
+document.getElementById("num_likes").innerHTML = count + " likes.";
+
+}
+
+function updateUnlikes(){
+if(count > 0){
+count--;
+document.getElementById("num_likes").innerHTML = count + " likes."; }
+
+}
+
+function addPhoto(){
+var url = window.prompt("Insert the url of the new photo you would like to add.");
+niza.push(url);
+
+}
+
+</script>
+
+<div class = "footer">
+<h2 class = "tekst">Made by Marija Jovanović &copy</h2>
+</div>
+
+</body>
+</html>

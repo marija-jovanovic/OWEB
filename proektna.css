@@ -1,0 +1,84 @@
+.header-image { /* samo za slika koja se naogja vo header delot */
+        background-image: url("pozadina.jpg");  
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: cover;
+        height: 600px;     
+}
+
+.header-text {
+text-align: center;
+position: relative;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: purple;
+background-color: black;
+width: 400px;
+padding: 20px;
+margin: 0px;
+font-family: helvetica, serif;
+}
+
+.header-text:hover {
+background-color:rgba(192,192,192,0.3);
+}
+
+.header-line {
+text-align: center;
+position: relative;
+top: 60%;
+left: 50%;
+transform: translate(-50%, -10%); 
+color: white;
+background-color: black;
+height: 50px;
+padding: 20px;
+margin: 0px;
+font-family: helvetica, serif;
+}
+
+nav {
+font-weight: bold;
+font-size: large;
+color: purple;
+border: 5px solid purple;
+text-align: center;
+transform: translate(440%, -1%);
+width: 10em;
+background-color: black;
+}
+
+nav ul {
+display: none;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+nav:hover ul { display: block; visibility: visible;}
+
+nav ul li {
+border-top: 2px solid purple;
+background-color: black;
+width: 10em;
+color: purple;
+text-decoration: none;
+}
+
+nav ul li:hover {
+background-color: snow;
+text-decoration: none;
+}
+
+
+.footer {
+  left: 0;
+  bottom: 0;
+    height: 50px;
+  width: 100%;
+  background-image: url(pozadina.jpg);
+  color: black;
+  text-align: right;
+}

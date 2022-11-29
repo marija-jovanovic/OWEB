@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title></title>
+<link rel = "stylesheet" type = "text/css" href = "proektna.css">
+<style>
+
+body {
+font-family: helvetica, serif;
+background-image: linear-gradient(to right, purple , rgb(65,105,225));
+
+}
+
+
+.tekst {
+font-family: helvetica, serif;
+}
+
+img {
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+}
+
+a.boja {
+font-weight: bold;
+text-decoration: none;
+}
+
+
+.centar {
+text-align: center;
+}
+
+div.naslovi {text-align: center; color: purple; background-image: linear-gradient(to right, purple , rgb(65,105,225)); color: purple;
+-webkit-text-stroke: 2px rgb(65,105,225); font-size: 150%;}
+
+.blog_boja {
+background-color: snow;
+border: 2px solid black;
+}
+
+.submit {
+border-radius: 5px;
+border-color: black;
+border-width: 2px;
+border-style: solid;
+font-weight: bold;
+font-size: medium;
+background-color: white;
+font-family: helvetica, serif;
+}
+
+.submit:hover{ background-color: lightpink; }
+
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px; 
+}
+
+</style>
+</head>
+
+<body>
+<div class="header-image">
+<div class="header-text">
+<h1>Marija Jovanović's Webpage</h1>
+</div>
+<div class = "header-line">
+<nav>Menu
+<ul>
+<li><a class = "boja" href = "proektna.html">Home</a></li>
+<li><a class = "boja" href = "omileni_nesta.html">Favourite Things</a></li>
+<li><a class = "boja" href = "galerija.html">Gallery</a></li>
+<li><a class = "boja" href = "blog_writing.html">Blog</a></li>
+<li><a class = "boja" href = "anketa.html">Survey</a></li>
+<li><a class = "boja" href = "kontakt.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</div>
+
+<br>
+
+<div id = "brisi">
+
+<div class = "naslovi">
+<h1>Create new post for your blog:</h1></div>
+
+
+<div class = "centar">
+<h2>Choose a title:</h2>
+<textarea id="topic" rows="1" cols="50" placeholder="Insert topic here..." class = "blog_boja"></textarea>
+</div>
+<br>
+<div class = "centar">
+<textarea id="content" rows="30" cols="200" placeholder="Start writing here..." class = "blog_boja"></textarea>
+<br><br>
+<button class = "submit" onclick = "testJS()">Publish post</button>
+</div>
+
+</div>
+
+<script>
+
+function testJS(){
+
+var naslov = document.getElementById("topic").value;
+var sodrzina = document.getElementById("content").value;
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = dd + '/' + mm + '/' + yyyy; 
+
+if(sodrzina == "" && naslov == ""){
+naslov = "Linux Mint, Wikipedia";
+sodrzina = "Linux Mint is a community-driven Linux distribution based on Ubuntu (which is in turn based on Debian), bundled with a variety of free and open-source applications. It can provide full out-of-the-box multimedia support for those who choose to include proprietary software such as multimedia codecs. The Linux Mint project was created by Clément Lefèbvre and is actively maintained by the Linux Mint Team and community.";
+}
+
+var diiv = document.getElementById("brisi");
+while(diiv.firstChild){
+diiv.removeChild(diiv.lastChild);
+}
+
+//diiv.style.className = centar;
+var d = diiv.appendChild(document.createElement("div"));
+d.style.backgroundColor = "snow";
+d.style.padding = "20px";
+d.style.marginTop = "20px";
+d.style.border = "1px solid black";
+
+var h_2 = document.createElement("h2");
+h_2.style.textAlign = "center";
+d.appendChild(h_2);
+var h_5 = document.createElement("h5");
+h_5.style.textAlign = "center";
+d.appendChild(h_5);
+d.appendChild(document.createElement("p"));
+
+d.children[0].innerHTML = naslov;
+d.children[1].innerHTML = today;
+d.children[2].innerHTML = sodrzina;
+
+
+}
+
+</script>
+
+
+<div class = "footer">
+<h2 class = "tekst">Made by Marija Jovanović &copy</h2>
+</div>
+
+</body>
+</html>

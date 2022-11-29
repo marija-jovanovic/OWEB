@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title></title>
+<link rel = "stylesheet" type = "text/css" href = "proektna.css">
+<style>
+body {
+font-family: helvetica, serif;
+background-image: linear-gradient(to right, purple , rgb(65,105,225));
+}
+
+.tekst {
+-webkit-text-stroke: 0.5px black; color: black; font-weight: bold;
+}
+
+
+
+div.naslovi {text-align: center; color: purple; background-image: linear-gradient(to right, purple , rgb(65,105,225)); color: purple;
+-webkit-text-stroke: 2px rgb(65,105,225); font-size: 150%;}
+
+.kopcinja:hover{ background-color: lightpink; }
+
+.kopcinja {
+border-radius: 5px;
+box-shadow: 5px 5px 5px black;
+border-color: black;
+border-style: solid;
+}
+
+.submit {
+border-radius: 5px;
+transform: translate(150%, -10%);
+border-color: black;
+border-width: 5px;
+border-style: solid;
+font-weight: bold;
+font-size: medium;
+color:
+background-color: white;
+font-family: helvetica, serif;
+}
+
+.submit:hover{ background-color: lightpink; }
+
+</style>
+</head>
+
+<body>
+
+<div class="header-image">
+<div class="header-text">
+<h1>Marija Jovanović's Webpage</h1>
+</div>
+<div class = "header-line">
+<nav>Menu
+<ul>
+<li><a class = "boja" href = "proektna.html">Home</a></li>
+<li><a class = "boja" href = "omileni_nesta.html">Favourite Things</a></li>
+<li><a class = "boja" href = "galerija.html">Gallery</a></li>
+<li><a class = "boja" href = "blog_writing.html">Blog</a></li>
+<li><a class = "boja" href = "anketa.html">Survey</a></li>
+<li><a class = "boja" href = "kontakt.html">Contact</a></li>
+</ul>
+</nav>
+</div>
+</div>
+
+
+<form method = "post" autocomplete = "on" action = "https://mjcodingjourney.wordpress.com/">
+
+<div class = "naslovi">
+
+<h1>Survey</h1>
+</div>
+
+<fieldset class = "ramki">
+  <legend class = "tekst">Personal Information</legend>
+  
+  <p><label><strong>Name<br></strong>
+  <input name = "name" id = "name" type = "text" size = "25" maxlength = "30" class = "kopcinja" required> *required
+  </label></p>
+
+  <p><label><strong>Age<br></strong>
+<input name = "age" id = "age" type = "text" size = "2" maxlength = "3" class = "kopcinja" required> *required</label></p>
+
+  <p><label><strong>Country<br></strong>
+<input name = "country" id = "country" type = "text" size = "25" maxlength = "30" class = "kopcinja" required> *required</label></p>
+
+<p><label><strong>Gender<br></strong>
+<input name = "gender" type = "radio" value = "female" required> Female<br>
+<input name = "gender" type = "radio" value = "male" required> Male<br>
+</p>
+
+<p><label><strong>E-mail address<br></strong>
+<input name = "email" id = "email" type = "password" size = "25" maxlength = "30" class = "kopcinja"> *optional</label></p>
+
+</fieldset>
+<br>
+<fieldset>
+ <legend class = "tekst">Personal Experience</legend>
+  <p>
+<label><strong>How did you find out about this site?</strong><br>
+  <input name = "find" type = "radio" value = "An acquintance told me about it" required> An acquaintance told me about it<br>
+  <input name = "find" type = "radio" value = "While randomly browsing" required> While randomly browsing<br>
+<input name = "find" type = "radio" value = "Other" required> Other<br>
+<textarea name = "other" rows = "4" cols = "36" placeholder = "Type here if you have chosen Other..." class = "kopcinja"></textarea>
+  </label></p>
+
+ <p>
+<label><strong>Did you enjoy the site's content?</strong><br>
+<input name = "enjoyment" type = "radio" value = "yes" required> Yes<br>
+<input name = "enjoyment" type = "radio" value = "no" required"> No</label></p>
+
+<p><label><strong>Rate our site:</strong><br>
+<select name = "rating">
+<option selected>Very poor</option>
+<option selected>Poor</option>
+<option selected>OK</option>
+<option selected>Good</option>
+<option selected>Very good</option>
+</select></label></p>
+
+<p><label><strong>Would you recommend this site to others?</strong><br>
+<input name = "recommend" type = "radio" value = "yes" required> Yes<br>
+<input name = "recommend" type = "radio" value = "no" required"> No</label></p>
+
+<p><label><strong>Would you like to add a feedback?</strong><br>
+<textarea name = "feedback" rows = "6" cols = "50" placeholder = "Enter feedback here." class = "kopcinja"></textarea></label></p> 
+</fieldset>
+
+<p><label><strong>Tick the box below if you would like to receive news about this website on your email.</strong><br>
+<input name = "news" type = "checkbox" value = "email_subscription">I would like to receive news about this website.</label></p>
+
+<p>
+<input type = "submit" value = "Submit" class = "submit">
+</p>
+
+
+</form></div>
+
+
+<div class = "footer">
+<h2 class = "tekst">Made by Marija Jovanović &copy</h2>
+</div><br>
+</body>
+</html>
